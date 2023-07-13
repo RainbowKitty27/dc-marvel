@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>The Comic Store</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+
+    <script src="./dc.js"></script>
+    <script src="./marvel.js"></script>
+    <script src="./browse.js"></script>
+  </head>
+  <body>
+    <a-scene id="main-scene">
+      
+
+      <a-sky id="main-container" radius="5000" color="#01427a"></a-sky>
+
+      <a-entity id="dc-container" cursor-listener dc ></a-entity>
+      <a-entity id="marvel-container" cursor-listener marvel></a-entity>
+      
+      <!-- CAMERA -->
+      <a-camera id="camera" wasd-controls="enabled:false;">
+        <!-- App Title -->
+        <a-entity
+          id="app-title"
+          position="0 0.73 -1"
+          text="font: exo2bold; align: center; width: 2; color: #000; value: Welcome to The Comic Store"
+        >
+          <a-entity
+            id="app-subtitle-1"
+            position="0 -0.1 0"
+            text="font: dejavu; align: center; width: 1; color: #cb63db; value: DC Comics"
+          ></a-entity>
+          <a-entity
+            id="app-subtitle-2"
+            position="0 -0.75 0"
+            text="font: dejavu; align: center; width: 1; color: #cb63db; value: Marvel Comics"
+          ></a-entity>
+        </a-entity>
+        <a-entity id="camera-cursor" cursor position="0 0 -1"
+        geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="color: #fff; shader: flat">
+      </a-entity>
+      
+       
+        <a-entity></a-entity>
+      </a-camera>
+    </a-scene>
+  </body>
+</html>
